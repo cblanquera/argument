@@ -163,6 +163,8 @@
 				return typeof data == 'number' && ('' + data).indexOf('.') == -1;
 			case 'float':
 				return typeof data == 'number' && ('' + data).indexOf('.') != -1;
+			case 'date':
+				return data instanceof Date;
 			case 'email':
 				return typeof data == 'string' && _isEmail(data);
 			case 'url':

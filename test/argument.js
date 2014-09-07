@@ -115,6 +115,21 @@ describe('Argument Test Suite', function() {
 			}, Error);
 		});
 		
+		it('should be a Date', function() {
+			var test = function() {
+				argument.test(1, 'date');
+				return true;
+			};
+			
+			assert.equal(true, test(new Date()));
+			assert.throws(function() {
+				test('openovate.com');
+			}, Error);
+			assert.throws(function() {
+				test();
+			}, Error);
+		});
+		
 		it('should be html', function() {
 			var test = function() {
 				argument.test(1, 'html');
