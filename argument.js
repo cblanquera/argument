@@ -56,7 +56,7 @@
 		}
 		
 		//types are comma separated
-		types = $.args();
+		types = Array.prototype.slice.apply(arguments);
 		//shift out the value from types (it's not a type!)
 		types.shift();
 		//get the arguments of the function that called this method
